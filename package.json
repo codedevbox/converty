@@ -1,0 +1,40 @@
+{
+  "name": "converty-cli",
+  "version": "1.0.0",
+  "description": "Convert your images to moder formats!",
+  "exports": "./index.js",
+  "type": "module",
+  "node": ">=16",
+  "scripts": {
+    "lint": "eslint . --ext .ts",
+    "start": "node dist/app.js",
+    "build": "tsc"
+  },
+  "author": "Alex",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "chalk-animation": "^2.0.3",
+    "imagemin": "^8.0.1",
+    "imagemin-avif": "^0.1.6",
+    "imagemin-jpegtran": "^7.0.0",
+    "imagemin-pngquant": "^10.0.0",
+    "imagemin-webp": "^8.0.0",
+    "inquirer": "^8.2.0",
+    "sharp": "^0.33.2",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/chalk-animation": "^1.6.3",
+    "@types/imagemin": "^8.0.5",
+    "@types/imagemin-jpegtran": "^5.0.4",
+    "@types/imagemin-pngquant": "^8.0.0",
+    "@types/imagemin-webp": "^7.0.3",
+    "@types/inquirer": "^8.2.0",
+    "@types/node": "^20.11.20",
+    "@types/yargs": "^17.0.32",
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0",
+    "eslint": "^8.57.0"
+  }
+}
