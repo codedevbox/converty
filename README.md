@@ -94,8 +94,6 @@ npm run start -- -h
 
 -i, --in Specify the formats to convert to (.webp, .avif, .jpg) [string] [choices: "all", ".webp", ".avif", ".jpg"] [default: "all"]
 
--q, --quality Specify quality for jpg. [number] [default: 80]
-
 -w, --width Specify the width of the new image (e.g., 800). If preparing images with different widths, separate them by commas (e.g., 1200, 800, 400). Use a colon to indicate the suffix to be added at the end of the new file name (e.g., 1200:-b, 800:-m, 400:-s) [string] [default: "no"]
 
 --height, --he If necessary, specify the height of the new image (e.g., 800). If preparing images with different heights, separate them by commas (e.g., 1200, 800, 400). Use a colon to indicate the suffix to be added at the end of the new file name (e.g., 1200:-b, 800:-m, 400:-s). [string] [default: "no"]
@@ -106,10 +104,10 @@ npm run start -- -h
 
 The default source folder is 'images,' but you can specify another one using the 'source' parameter. The folder to which the copy will be made is determined by the 'destination' parameter.
 
-This command is used to convert all images in the "images" folder, including all nested subfolders and images, into the "result" folder overwrite the original file with quality for jpg 90 :
+This command is used to convert all images in the "images" folder, including all nested subfolders and images, into the "result" folder overwrite the original file with quality for jpg 30 and png 35 :
 
 ```bash
-npm run start -- -r -c -o -q 90
+npm run start -- -r -c -o -qjpg 30 -qpng 35
 ```
 
 "If you don't set the --copy (-c) parameter, the converted files will be placed in the original folder. If you don't set the --recursive (-r) parameter, the conversion will only process the content of the original folder without handling images in nested folders."
@@ -120,16 +118,16 @@ The following example converts images in the default 'images' folder into all av
 npm run start -- -w 1200
 ```
 
-The following example converts all PNG images from the 'data' folder, including nested subfolders, to the 'img' folder in the webp format. The images will be converted with 50% quality and in two sizes, 1200 and 800 pixels wide, with '-b' and '-s' appended to the end of the file name, respectively.
+The following example converts all PNG images from the 'data' folder, including nested subfolders, to the 'img' folder in the webp format. The images will be converted in two sizes, 1200 and 800 pixels wide, with '-b' and '-s' appended to the end of the file name, respectively.
 
 ```bash
-npm run start -- -s data -r -c -d img -f .png -i .webp -w 1200:-b,800:-s -q 60
+npm run start -- -s data -r -c -d img -f .png -i .webp -w 1200:-b,800:-s
 ```
 
-The following example converts all PNG images from the folder, including nested subfolders, to the 'result' folder in JPG format. The images will be converted with 60% quality and resized to a width of 1000 pixels.
+The following example converts all PNG images from the folder, including nested subfolders, to the 'result' folder in JPG format. The images will be resized to a width of 1000 pixels.
 
 ```bash
-npm run start -- -r -f .png -i .jpg -w 1000 -q 60
+npm run start -- -r -f .png -i .jpg -w 1000
 ```
 
 ## License
